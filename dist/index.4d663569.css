@@ -1,12 +1,129 @@
-h1 {
-  color: #ff69b4;
-  font-family: cursive;
+@import "https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600&family=Tilt+Neon&display=swap";
+* {
+  font-family: Gabarito, sans-serif;
 }
 
-body {
-  color: #1f1f1f;
-  background: linear-gradient(#bada55, #c0ffee);
+a {
+  font-family: Tilt Neon, sans-serif;
+}
+
+#portada {
+  background-image: url("universe-4717740_1280.bd4380c5.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
+}
+
+#portada nav {
+  color: #fff;
+}
+
+#menu {
+  width: 50px;
+  height: 50px;
+}
+
+.oculto {
+  visibility: hidden;
+  display: none;
+}
+
+.vidible {
+  display: inherit;
+  visibility: visible;
+}
+
+nav ul {
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+
+nav ul li {
+  text-align: center;
+  border-bottom: thin solid #fff;
+  flex: none;
+  width: 100%;
+  height: 50px;
+  position: relative;
+}
+
+nav ul li:first-child {
+  border-top: thin solid #fff;
+}
+
+#portada a {
+  color: #fff;
+  width: 100%;
+  text-decoration: none;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (width >= 360px) {
+  body {
+    background-color: #add8e6;
+  }
+}
+
+@media (width >= 720px) {
+  nav ul {
+    flex-direction: row;
+  }
+
+  nav ul li {
+    text-align: center;
+    border-top: none;
+    border-bottom: none;
+    flex: 100%;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    padding: 0;
+    position: static;
+  }
+
+  #portada a {
+    color: #fff;
+    border: thin solid #fff;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    display: block;
+    position: static;
+    transform: translateY(0);
+  }
+}
+
+@media (width >= 1366px) {
+  nav ul {
+    justify-content: center;
+  }
+
+  nav ul li {
+    flex: 0 150px;
+  }
+
+  #portada a {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    display: block;
+    position: static;
+    transform: translateY(0);
+  }
+}
+
+@media (width >= 1920px) {
+  body {
+    background-color: #add8e6;
+  }
 }
 
 /*# sourceMappingURL=index.4d663569.css.map */
