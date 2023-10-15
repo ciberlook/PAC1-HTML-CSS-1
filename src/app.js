@@ -19,6 +19,11 @@ window.addEventListener('resize',(ev)=>{
         menu.classList.add('oculto');
 },true);
 
+window.addEventListener('load',()=>{
+  if (window.innerWidth>720)
+    menu.classList.remove('oculto');
+})
+
 var tl = gsap.timeline({ reversed: true });
   
   tl.paused(true);

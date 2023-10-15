@@ -588,6 +588,9 @@ window.addEventListener("resize", (ev)=>{
     if (window.innerWidth > 720) menu.classList.remove("oculto");
     else menu.classList.add("oculto");
 }, true);
+window.addEventListener("load", ()=>{
+    if (window.innerWidth > 720) menu.classList.remove("oculto");
+});
 var tl = (0, _gsapCore.gsap).timeline({
     reversed: true
 });
