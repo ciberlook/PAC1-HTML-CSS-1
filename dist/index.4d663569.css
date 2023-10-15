@@ -3,6 +3,10 @@
   font-family: Gabarito, sans-serif;
 }
 
+body {
+  margin: 0;
+}
+
 a {
   font-family: Tilt Neon, sans-serif;
 }
@@ -16,11 +20,38 @@ a {
 
 #portada nav {
   color: #fff;
+  margin: 1.5em;
 }
 
-#menu {
+#bomenu {
+  cursor: pointer;
+  background-color: #0000;
+  border: thin solid #fff;
+  border-radius: 10px;
   width: 50px;
   height: 50px;
+}
+
+.line {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 4px;
+  transition: stroke-dasharray .6s cubic-bezier(.4, 0, .2, 1), stroke-dashoffset .6s cubic-bezier(.4, 0, .2, 1);
+}
+
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 4px;
+}
+
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 4px;
+}
+
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 4px;
 }
 
 .oculto {
@@ -28,35 +59,34 @@ a {
   display: none;
 }
 
-.vidible {
-  display: inherit;
-  visibility: visible;
-}
-
-nav ul {
+#menu {
+  background-color: #0f1458;
   flex-direction: column;
+  width: calc(100% - 3em);
   margin: 0;
   padding: 0;
   list-style-type: none;
   display: flex;
+  position: absolute;
 }
 
-nav ul li {
+#menu li {
   text-align: center;
-  border-bottom: thin solid #fff;
+  border-bottom: thick solid #fff7b6;
   flex: none;
   width: 100%;
   height: 50px;
   position: relative;
 }
 
-nav ul li:first-child {
-  border-top: thin solid #fff;
+#menu li:first-child {
+  border-top: thick solid #fff7b6;
 }
 
 #portada a {
-  color: #fff;
+  color: #fff7b6;
   width: 100%;
+  font-size: 26px;
   text-decoration: none;
   display: block;
   position: absolute;
@@ -71,11 +101,17 @@ nav ul li:first-child {
 }
 
 @media (width >= 720px) {
-  nav ul {
+  #bomenu {
+    visibility: hidden;
+    display: none;
+  }
+
+  #menu {
+    background-color: inherit;
     flex-direction: row;
   }
 
-  nav ul li {
+  #menu li {
     text-align: center;
     border-top: none;
     border-bottom: none;
@@ -85,6 +121,10 @@ nav ul li:first-child {
     margin: 10px;
     padding: 0;
     position: static;
+  }
+
+  #menu li:first-child {
+    border-top: none;
   }
 
   #portada a {

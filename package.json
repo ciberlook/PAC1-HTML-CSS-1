@@ -23,5 +23,8 @@
     "postcss": "^8.4.31",
     "posthtml-include": "^1.7.4",
     "rimraf": "^5.0.5"
+  },
+  "dependencies": {
+    "gsap": "^3.12.2"
   }
 }
