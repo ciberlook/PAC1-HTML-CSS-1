@@ -580,34 +580,41 @@ var _all = require("gsap/all");
 (0, _gsapCore.gsap).registerPlugin((0, _all.MotionPathPlugin));
 const bomenu = document.querySelector("#bomenu");
 const menu = document.querySelector("#menu");
+let tl = (0, _gsapCore.gsap).timeline({
+    reversed: true,
+    paused: true
+});
 bomenu.addEventListener("click", (ev)=>{
     menu.classList.toggle("oculto");
     tl.reversed() ? tl.play() : tl.reverse(0.2);
+    tl.to(".line1", {
+        duration: 0.05,
+        strokeDasharray: "90 207",
+        strokeDashoffset: "-134"
+    }).to(".line2", {
+        duration: 0.05,
+        strokeDasharray: "1 60",
+        strokeDashoffset: "-30"
+    }, "-=0.1").to(".line3", {
+        duration: 0.05,
+        strokeDasharray: "90 207",
+        strokeDashoffset: "-134"
+    }, "-=0.2");
 }, true);
 window.addEventListener("resize", (ev)=>{
-    if (window.innerWidth > 720) menu.classList.remove("oculto");
+    if (window.innerWidth >= 720) menu.classList.remove("oculto");
     else menu.classList.add("oculto");
 }, true);
 window.addEventListener("load", ()=>{
-    if (window.innerWidth > 720) menu.classList.remove("oculto");
+    if (window.innerWidth >= 720) menu.classList.remove("oculto");
 });
-var tl = (0, _gsapCore.gsap).timeline({
-    reversed: true
+let navT1 = (0, _gsapCore.gsap).timeline();
+navT1.to("#menu", {
+    duration: 0,
+    display: "block",
+    ease: "Expo.easeInOut"
 });
-tl.paused(true);
-tl.to(".line1", {
-    duration: 0.05,
-    strokeDasharray: "90 207",
-    strokeDashoffset: "-134"
-}).to(".line2", {
-    duration: 0.05,
-    strokeDasharray: "1 60",
-    strokeDashoffset: "-30"
-}, "-=0.1").to(".line3", {
-    duration: 0.05,
-    strokeDasharray: "90 207",
-    strokeDashoffset: "-134"
-}, "-=0.2");
+navT1.reversed(!navT1.reversed());
 
 },{"gsap/gsap-core":"05eeC","gsap/all":"3UJRo"}],"05eeC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

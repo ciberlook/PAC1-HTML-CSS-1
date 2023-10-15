@@ -22,7 +22,9 @@ a {
 #portada nav {
     color:white;
     margin: 1.5em;
+    
 }
+
 #bomenu {
     background-color: #0000;
     width: 50px;
@@ -30,6 +32,17 @@ a {
     border: thin solid white;
     border-radius: 10px;
     cursor: pointer;
+    outline: none;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 99;
+}
+
+#bomenu path {
+    fill: none;
+    stroke:white;
+    stroke-linecap:round;
 }
 
 .line {
@@ -63,10 +76,14 @@ a {
     flex-direction: column;
     margin: 0px;
     padding: 0px;
-    background-color: #0f1458;
+    background-color: rgba(0,0,0,0.7);
+    backdrop-filter: blur(15);
     position: absolute;
-    width: calc(100% - 3em);
-    
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    justify-content: center;
 }
 
 #menu li {
@@ -75,16 +92,23 @@ a {
     width: 100%;
     text-align: center;
     position: relative;
-    border-bottom: thick solid #fff7b6;
+    
 }
 
-#menu li:first-child {
-    border-top: thick solid #fff7b6;
+#menu li + li {
+    margin-top: 30px;
+}
+
+#menu li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 2.5em;
+    line-height: 1;
+    letter-spacing: 5px;
 }
 
 #portada a {
-    text-decoration: none;
-    color:#fff7b6;
+    color:#ffffff;
     font-size: 26px;
     display: block;
     width: 100%;
@@ -108,7 +132,9 @@ a {
     }
     #menu {
         flex-direction: row;
-        background-color: inherit;
+        background-color: initial;
+        position: initial;
+        backdrop-filter:initial;
     }
     #menu li {
         flex:1 1 100%;
@@ -122,12 +148,19 @@ a {
         border-top: none;
     }
 
-    #menu li:first-child {
-        border-top: none;
+    #menu li + li {
+        margin: 10px;
     }
-    
-    #portada a {
+
+    #menu li a{
+        text-transform: uppercase;
         text-decoration: none;
+        font-size: 1.1em;
+        line-height: 1.8;
+        letter-spacing: 0px;
+    }
+      
+    #portada a {
         color:white;
         display: block;
         width: 100%;
@@ -148,9 +181,17 @@ a {
         flex:0 1 150px;
        
     }
+
+    #menu li a{
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 1.4em;
+        line-height: 1.8;
+        letter-spacing: 0px;
+    }
     
     #portada a {
-        text-decoration: none;
+        
         color:white;
         display: block;
         width: 100%;
