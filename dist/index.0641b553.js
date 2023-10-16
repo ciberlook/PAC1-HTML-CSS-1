@@ -584,6 +584,16 @@ let tl = (0, _gsapCore.gsap).timeline({
     reversed: true,
     paused: true
 });
+let navT1 = (0, _gsapCore.gsap).timeline({
+    reserved: true,
+    paused: true
+});
+navT1.from("#menu", {
+    duration: 1,
+    autoAlpha: 0,
+    display: "flex",
+    ease: "Expo.easeInOut"
+}).reverse();
 bomenu.addEventListener("click", (ev)=>{
     menu.classList.toggle("oculto");
     tl.reversed() ? tl.play() : tl.reverse(0.2);
@@ -600,6 +610,7 @@ bomenu.addEventListener("click", (ev)=>{
         strokeDasharray: "90 207",
         strokeDashoffset: "-134"
     }, "-=0.2");
+    navT1.reversed(!navT1.reversed());
 }, true);
 window.addEventListener("resize", (ev)=>{
     if (window.innerWidth >= 720) menu.classList.remove("oculto");
@@ -608,13 +619,6 @@ window.addEventListener("resize", (ev)=>{
 window.addEventListener("load", ()=>{
     if (window.innerWidth >= 720) menu.classList.remove("oculto");
 });
-let navT1 = (0, _gsapCore.gsap).timeline();
-navT1.to("#menu", {
-    duration: 0,
-    display: "block",
-    ease: "Expo.easeInOut"
-});
-navT1.reversed(!navT1.reversed());
 
 },{"gsap/gsap-core":"05eeC","gsap/all":"3UJRo"}],"05eeC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
