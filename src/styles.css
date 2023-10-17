@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600&family=Tilt+Neon&display=swap');
 
-* {
+p {
     font-family: 'Gabarito', sans-serif;
+    
 }
 
 body {
@@ -17,12 +18,62 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo {
+    margin: 0px;
+}
+
+.logo > img {
+    width: 150px;
+    height: auto;
+}
+
+nav {
+    background-color: orange;
+    margin: 0;
+    height: 150px;
+    flex: 1 1 auto;
 }
 
 #portada nav {
     color: white;
     margin: 1.5em;
+    background-color: #0000;
+    height: inherit;
+}
 
+#nave {
+    width: 80%;
+    height: auto;
+    position:absolute;
+    top: 25%;
+    left: 13%;
+    z-index: -1;
+    scale: 1;
+}
+
+#portada h1{
+    color: white;
+    position: absolute;
+    top: 40%;
+    left: 0%;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+    z-index: -1;
+    text-transform: uppercase;
+}
+
+h1, h1>span{
+    font-family: 'Tilt Neon', sans-serif;
 }
 
 #bomenu {
@@ -35,7 +86,7 @@ a {
     outline: none;
     position: absolute;
     top: 50px;
-    left: 50px;
+    right: 50px;
     z-index: 99;
 }
 
@@ -70,7 +121,7 @@ a {
 
 .oculto {
     display: none;
-
+    visibility: hidden;
 }
 
 #menu {
@@ -108,7 +159,10 @@ a {
     font-size: 2.5em;
     line-height: 1;
     letter-spacing: 5px;
+    color:white;
 }
+
+
 
 #portada a {
     color: #ffffff;
@@ -122,8 +176,10 @@ a {
 
 /* Configuración para moviles pequeños */
 @media (min-width: 360px) {
-    body {
-        background-color: lightblue;
+    
+    #portada h1{
+        font-size: 4em;
+        top: 45%;
     }
 }
 
@@ -147,14 +203,15 @@ a {
         height: auto;
         position: static;
         text-align: center;
-        margin: 10px;
+        margin: 55px 10px;
+        
         padding: 0px;
         border-bottom: none;
         border-top: none;
     }
 
     #menu li+li {
-        margin: 10px;
+        margin: 55px 10px;
     }
 
     #menu li a {
@@ -174,6 +231,25 @@ a {
         transform: translateY(0);
         border: thin solid white;
         border-radius: 20px;
+    }
+
+    #nave {
+        width: 50%;
+        height: auto;
+        position:absolute;
+        top: 44%;
+        left: 10%;
+        z-index: -1;
+        scale: 1;
+    }
+    #portada h1{
+        font-size: 2.5em;
+        top: 45%;
+        right: 0%;
+        letter-spacing: 1px;
+        width: 40%;
+        left: auto;
+        
     }
 }
 
@@ -205,11 +281,13 @@ a {
         position: static;
         transform: translateY(0);
     }
+    #portada h1 {
+        font-size: 4em;
+        width: 35%;
+    }
 }
 
 /* Configuración para ordenadores grandes */
 @media (min-width: 1920px) {
-    body {
-        background-color: lightblue;
-    }
+    
 }
