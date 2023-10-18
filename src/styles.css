@@ -2,7 +2,7 @@
 
 p {
     font-family: 'Gabarito', sans-serif;
-    
+
 }
 
 body {
@@ -21,23 +21,37 @@ a {
     overflow: hidden;
 }
 
+#portada h1 {
+    color: white;
+}
+
+#portada .logo {
+    filter: invert();
+}
+
 header {
+    background-color: orange;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    position: sticky;
+    top: 0px;
+    left: 0px;
 }
 
-.logo {
-    margin: 0px;
+#portada header {
+    background-color: #0000;
 }
 
-.logo > img {
+
+
+.logo>img {
     width: 150px;
     height: auto;
 }
 
 nav {
-    background-color: orange;
+
     margin: 0;
     height: 150px;
     flex: 1 1 auto;
@@ -53,15 +67,15 @@ nav {
 #nave {
     width: 80%;
     height: auto;
-    position:absolute;
+    position: absolute;
     top: 25%;
     left: 13%;
     z-index: -1;
     scale: 1;
 }
 
-#portada h1{
-    color: white;
+#portada h1 {
+
     position: absolute;
     top: 40%;
     left: 0%;
@@ -72,7 +86,8 @@ nav {
     text-transform: uppercase;
 }
 
-h1, h1>span{
+h1,
+h1>span {
     font-family: 'Tilt Neon', sans-serif;
 }
 
@@ -140,6 +155,8 @@ h1, h1>span{
     justify-content: center;
 }
 
+
+
 #menu li {
     flex: 0 0 auto;
     height: 50px;
@@ -159,12 +176,12 @@ h1, h1>span{
     font-size: 2.5em;
     line-height: 1;
     letter-spacing: 5px;
-    color:white;
+    color: white;
 }
 
 
 
-#portada a {
+header a {
     color: #ffffff;
     font-size: 26px;
     display: block;
@@ -176,8 +193,8 @@ h1, h1>span{
 
 /* Configuración para moviles pequeños */
 @media (min-width: 360px) {
-    
-    #portada h1{
+
+    #portada h1 {
         font-size: 4em;
         top: 45%;
     }
@@ -204,7 +221,7 @@ h1, h1>span{
         position: static;
         text-align: center;
         margin: 55px 10px;
-        
+
         padding: 0px;
         border-bottom: none;
         border-top: none;
@@ -218,11 +235,11 @@ h1, h1>span{
         text-transform: uppercase;
         text-decoration: none;
         font-size: 1.1em;
-        line-height: 1.8;
         letter-spacing: 0px;
+        line-height: 2;
     }
 
-    #portada a {
+    header a {
         color: white;
         display: block;
         width: 100%;
@@ -236,20 +253,21 @@ h1, h1>span{
     #nave {
         width: 50%;
         height: auto;
-        position:absolute;
+        position: absolute;
         top: 44%;
         left: 10%;
         z-index: -1;
         scale: 1;
     }
-    #portada h1{
+
+    #portada h1 {
         font-size: 2.5em;
         top: 45%;
         right: 0%;
         letter-spacing: 1px;
         width: 40%;
         left: auto;
-        
+
     }
 }
 
@@ -268,11 +286,11 @@ h1, h1>span{
         text-transform: uppercase;
         text-decoration: none;
         font-size: 1.4em;
-        line-height: 1.8;
+        line-height: 2;
         letter-spacing: 0px;
     }
 
-    #portada a {
+    header a {
 
         color: white;
         display: block;
@@ -281,6 +299,7 @@ h1, h1>span{
         position: static;
         transform: translateY(0);
     }
+
     #portada h1 {
         font-size: 4em;
         width: 35%;
@@ -288,6 +307,4 @@ h1, h1>span{
 }
 
 /* Configuración para ordenadores grandes */
-@media (min-width: 1920px) {
-    
-}
+@media (min-width: 1920px) {}

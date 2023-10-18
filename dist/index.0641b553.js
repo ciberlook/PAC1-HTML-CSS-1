@@ -576,13 +576,14 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"bNKaB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+//Animación de la nave y el texto
+parcelHelpers.export(exports, "animateShip", ()=>animateShip);
 var _gsapCore = require("gsap/gsap-core");
 var _all = require("gsap/all");
 var _splitType = require("split-type");
 var _splitTypeDefault = parcelHelpers.interopDefault(_splitType);
 (0, _gsapCore.gsap).registerPlugin((0, _all.MotionPathPlugin));
-const bomenu = document.querySelector("#bomenu");
-const menu = document.querySelector("#menu");
 let tl = (0, _gsapCore.gsap).timeline({
     reversed: true,
     paused: true
@@ -591,10 +592,8 @@ let navT1 = (0, _gsapCore.gsap).timeline({
     reserved: true,
     paused: true
 });
-let voyayerT1 = (0, _gsapCore.gsap).timeline();
-let voyayerT2 = (0, _gsapCore.gsap).timeline({
-    reversed: true
-});
+const bomenu = document.querySelector("#bomenu");
+const menu = document.querySelector("#menu");
 bomenu.addEventListener("click", (ev)=>{
     menu.classList.toggle("oculto");
     tl.reversed() ? tl.play() : tl.reverse(0.2);
@@ -617,13 +616,6 @@ bomenu.addEventListener("click", (ev)=>{
         display: "flex",
         ease: "Expo.easeInOut"
     });
-    navT1.to("#menu a", {
-        duration: 1.5,
-        scale: 100,
-        stagger: 0.2,
-        ease: "Expo.easeInOut"
-    }, "-=.8");
-    //navT1.reversed(!navT1.reversed());
     navT1.reversed() ? navT1.play() : navT1.reverse(1);
 }, true);
 window.addEventListener("resize", (ev)=>{
@@ -643,33 +635,39 @@ window.addEventListener("resize", (ev)=>{
         });
     }
 }, true);
-let typeSplit = new (0, _splitTypeDefault.default)("#portada h1", {
-    types: "lines, words, chars",
-    tagName: "span"
-});
 window.addEventListener("load", ()=>{
     if (window.innerWidth >= 720) menu.classList.remove("oculto");
 });
-voyayerT1.from("#nave", {
-    duration: 5,
-    scale: 0,
-    translateX: "-50%"
-});
-voyayerT2.to("#nave", {
-    duration: 3,
-    top: "+=10",
-    ease: "ease",
-    repeat: -1,
-    yoyo: true
-}, "+=5.5").play();
-voyayerT2.from("#portada h1 .word", {
-    y: "50%",
-    opacity: 0,
-    rotationZ: "10",
-    duration: 1,
-    ease: "power1.out",
-    stagger: 0.25
-}, "-=5").play();
+function animateShip() {
+    let voyayerT1 = (0, _gsapCore.gsap).timeline();
+    let voyayerT2 = (0, _gsapCore.gsap).timeline({
+        reversed: true
+    });
+    let typeSplit = new (0, _splitTypeDefault.default)("#portada h1", {
+        types: "lines, words, chars",
+        tagName: "span"
+    });
+    voyayerT1.from("#nave", {
+        duration: 5,
+        scale: 0,
+        translateX: "-50%"
+    });
+    voyayerT2.to("#nave", {
+        duration: 3,
+        top: "+=10",
+        ease: "ease",
+        repeat: -1,
+        yoyo: true
+    }, "+=5.5").play();
+    voyayerT2.from("#portada h1 .word", {
+        y: "50%",
+        opacity: 0,
+        rotationZ: "10",
+        duration: 1,
+        ease: "power1.out",
+        stagger: 0.25
+    }, "-=5").play();
+}
 
 },{"gsap/gsap-core":"05eeC","gsap/all":"3UJRo","split-type":"fvGAG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"05eeC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

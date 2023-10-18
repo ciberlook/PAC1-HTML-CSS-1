@@ -19,14 +19,26 @@ a {
   overflow: hidden;
 }
 
+#portada h1 {
+  color: #fff;
+}
+
+#portada .logo {
+  filter: invert();
+}
+
 header {
+  background-color: orange;
   justify-content: flex-start;
   align-items: center;
   display: flex;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
-.logo {
-  margin: 0;
+#portada header {
+  background-color: #0000;
 }
 
 .logo > img {
@@ -35,7 +47,6 @@ header {
 }
 
 nav {
-  background-color: orange;
   flex: auto;
   height: 150px;
   margin: 0;
@@ -59,7 +70,6 @@ nav {
 }
 
 #portada h1 {
-  color: #fff;
   letter-spacing: 1px;
   text-align: center;
   z-index: -1;
@@ -159,7 +169,7 @@ h1, h1 > span {
   text-decoration: none;
 }
 
-#portada a {
+header a {
   color: #fff;
   width: 100%;
   font-size: 26px;
@@ -210,11 +220,11 @@ h1, h1 > span {
     text-transform: uppercase;
     letter-spacing: 0;
     font-size: 1.1em;
-    line-height: 1.8;
+    line-height: 2;
     text-decoration: none;
   }
 
-  #portada a {
+  header a {
     color: #fff;
     border: thin solid #fff;
     border-radius: 20px;
@@ -258,11 +268,11 @@ h1, h1 > span {
     text-transform: uppercase;
     letter-spacing: 0;
     font-size: 1.4em;
-    line-height: 1.8;
+    line-height: 2;
     text-decoration: none;
   }
 
-  #portada a {
+  header a {
     color: #fff;
     width: 100%;
     height: 100%;
