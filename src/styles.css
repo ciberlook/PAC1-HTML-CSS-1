@@ -25,8 +25,12 @@ a {
     color: white;
 }
 
+.logo {
+    filter:invert();
+}
+
 #portada .logo {
-    filter: invert();
+    filter: invert(72%) sepia(42%) saturate(6635%) hue-rotate(7deg) brightness(114%) contrast(102%);
 }
 
 header {
@@ -34,16 +38,33 @@ header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    position: sticky;
-    top: 0px;
-    left: 0px;
+    box-shadow: 2px 2px 15px 5px #ff8325;
+    
 }
 
 #portada header {
     background-color: #0000;
+    box-shadow: none;
 }
 
+#category {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
 
+#category li {
+    flex: 1 1 100%;
+}
+
+#category img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
 
 .logo>img {
     width: 150px;
@@ -51,7 +72,6 @@ header {
 }
 
 nav {
-
     margin: 0;
     height: 150px;
     flex: 1 1 auto;
@@ -89,6 +109,11 @@ nav {
 h1,
 h1>span {
     font-family: 'Tilt Neon', sans-serif;
+}
+
+.centred_margin h1 {
+    margin: 1em 1.1em;
+    font-size: 2em;
 }
 
 #bomenu {
@@ -191,6 +216,14 @@ header a {
     transform: translateY(-50%);
 }
 
+#menu a:hover{
+    color:orange;
+}
+
+#menu:not(.oculto) a:hover{
+    color:orange;
+}
+
 /* Configuración para moviles pequeños */
 @media (min-width: 360px) {
 
@@ -198,10 +231,16 @@ header a {
         font-size: 4em;
         top: 45%;
     }
+
+    
 }
 
 /* Configuracióin para tabletas */
 @media (min-width: 720px) {
+    #category li {
+        flex: 1 1 50%;
+    }
+
     #bomenu {
         display: none;
         visibility: hidden;
@@ -239,7 +278,7 @@ header a {
         line-height: 2;
     }
 
-    header a {
+    #menu a {
         color: white;
         display: block;
         width: 100%;
@@ -248,6 +287,20 @@ header a {
         transform: translateY(0);
         border: thin solid white;
         border-radius: 20px;
+    }
+
+    #menu a:hover{
+        color:orange;
+        background-color: white;
+    }
+
+    #portada #menu a:hover{
+        background-color: orange;
+        color: white;
+    }
+    
+    #menu:not(.oculto) a:hover{
+        color:orange;
     }
 
     #nave {
@@ -273,6 +326,15 @@ header a {
 
 /* Configuración para ordenadores medianos */
 @media (min-width: 1366px) {
+    .centred_margin {
+        max-width: 1310px;
+        margin: 0 auto;
+    }
+
+    #category li {
+        flex: 1 0 35%;
+    }
+
     nav ul {
         justify-content: center;
     }
